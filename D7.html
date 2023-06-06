@@ -174,11 +174,8 @@
 
       const makeItClickable = function () {
         let h1 = document.getElementsByTagName("h1")[0];
-        document.getElementsByTagName("h1")[0].onclick = function () {
-          document.getElementsByTagName("h1")[0].innerText = h1.innerText.slice(
-            0,
-            -1
-          );
+        h1.onclick = function () {
+          h1.innerText = h1.innerText.slice(0, -1);
         };
       };
       makeItClickable();
@@ -200,9 +197,44 @@
       */
 
       const generateTable = function () {
-        let table = document.createElement("table");
+        document.getElementById("tableArea").innerHTML = `<table>
+          <thead>
+            <tr>
+              <th> Immagine </th>
+              <th> Nome Prodotto </th>
+              <th> Quantità </th>
+              <th> Prezzo </th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> Immagine </td>
+                <td> Nome Prodotto </td>
+                <td> Quantità </td>
+                <td> Prezzo </td>
+                </tr>
+                <tr>
+                <td> Immagine </td>
+                <td> Nome Prodotto </td>
+                <td> Quantità </td>
+                <td> Prezzo </td>
+                </tr>
+                <tr>
+                <td> Immagine </td>
+                <td> Nome Prodotto </td>
+                <td> Quantità </td>
+                <td> Prezzo </td>
+                </tr>
+                <tr>
+                <td> Immagine </td>
+                <td> Nome Prodotto </td>
+                <td> Quantità </td>
+                <td> Prezzo </td>
+                </tr>
+                </tbody>
+            </table>`;
       };
-
+      generateTable();
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
@@ -232,7 +264,21 @@
         Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
       */
 
-      const deleteVowels = function () {};
+      const deleteVowels = function () {
+        let allText = document.getElementsByTagName("h1, h2, h3, li, p, a");
+        allText = Array.from(allText);
+        allText = allText.filter((letter) => {
+          return (
+            letter.innerText !== a &&
+            letter.innerText !== e &&
+            letter.innerText !== i &&
+            letter.innerText !== o &&
+            letter.innerText !== u
+          );
+        });
+      };
+
+      // deleteVowels();
     </script>
   </body>
 </html>
