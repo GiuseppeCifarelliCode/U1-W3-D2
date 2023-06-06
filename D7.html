@@ -222,7 +222,8 @@
       const changeColorWithRandom = function () {
         let h2 = document.getElementById("changeMyColor");
         document.getElementById("changeMyColor").onclick = function () {
-          document.getElementById("changeMyColor").style.color = "green";
+          document.getElementById("changeMyColor").style.color =
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
         };
       };
       changeColorWithRandom();
